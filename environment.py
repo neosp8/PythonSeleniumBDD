@@ -1,3 +1,6 @@
+import os
+from datetime import datetime
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
@@ -11,3 +14,11 @@ def before_all(context):
 
 def after_all(context):
     context.driver.close()
+
+
+def after_step(context, step):
+    if step.status == "failed":
+        screenshots_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "screenshots")
+        screenshot_name = os.path.join(screenshots_dir, step.name + datetime.now().strftime(" %m-%d-%Y %H:%M:%S") +
+                                       ".PNG")
+        context.driver.get_screenshot_as_file(screenshot_name)

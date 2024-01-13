@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore the virtual environment folder
+venv/
+
+# Ignore the report folder
+report/
+
+# Ignore the screenshots folder
+screenshots/
+
+# Ignore any generated documentation
+docs/_build/
+
+# Ignore test environment configuration
+.env
+
+# Ignore the Behave log file
+behave.log
+
+# Ignore any saved application state
+*.bak
+
+# Ignore PyCharm files
+.idea/
+
+# Ignore PNG files
+*.png
